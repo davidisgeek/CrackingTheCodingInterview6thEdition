@@ -19,27 +19,6 @@ namespace Ch01._Arrays_and_Strings.Tests
         }
 
         [TestMethod()]
-        [DataRow("")]
-        [DataRow(null)]
-        [ExpectedException(typeof(ArgumentException))]
-
-        public void IsUniqueIneffecient_InputIsNull_ThrowArgumentException(string str)
-        {
-            var result = q1_1_IsUnique.IsUniqueIneffecient(str);
-        }
-
-        [TestMethod()]
-        [DataRow("")]
-        [ExpectedException(typeof(ArgumentException))]
-
-        public void IsUniqueIneffecient_InputIsEmpty_ThrowArgumentException(string str)
-        {
-            var result = q1_1_IsUnique.IsUniqueIneffecient(str);
-        }
-
-
-
-        [TestMethod()]
         [DataRow("a")]
         [DataRow("ab")]
         [DataRow("abcdef")]
@@ -59,6 +38,102 @@ namespace Ch01._Arrays_and_Strings.Tests
         public void IsUniqueIneffecient_InputIsNotUnique_ReturnFalse(string str)
         {
             var result = q1_1_IsUnique.IsUniqueIneffecient(str);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod()]
+        [DataRow("a")]
+        [DataRow("ab")]
+        [DataRow("abcdef")]
+        public void IsUniqueSorted_InputIsUnique_ReturnTrue(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueSorted(str);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod()]
+        [DataRow("aa")]
+        [DataRow("abab")]
+        [DataRow("casa")]
+        [DataRow("eve")]
+        [DataRow("abdefghijkk")]
+        public void IsUniqueSorted_InputIsNotUnique_ReturnFalse(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueSorted(str);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod()]
+        [DataRow("a")]
+        [DataRow("ab")]
+        [DataRow("abcdef")]
+        public void IsUniqueHashArray_InputIsUnique_ReturnTrue(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueHashArray(str);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod()]
+        [DataRow("aa")]
+        [DataRow("abab")]
+        [DataRow("casa")]
+        [DataRow("eve")]
+        [DataRow("abdefghijkk")]
+        public void IsUniqueHashArray_InputIsNotUnique_ReturnFalse(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueHashArray(str);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod()]
+        [DataRow("a")]
+        [DataRow("ab")]
+        [DataRow("abcdef")]
+        public void IsUniqueHashSet_InputIsUnique_ReturnTrue(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueHashSet(str);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod()]
+        [DataRow("aa")]
+        [DataRow("abab")]
+        [DataRow("casa")]
+        [DataRow("eve")]
+        [DataRow("abdefghijkk")]
+        public void IsUniqueHashSet_InputIsNotUnique_ReturnFalse(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueHashSet(str);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod()]
+        [DataRow("a")]
+        [DataRow("ab")]
+        [DataRow("abcdef")]
+        public void IsUniqueBitVector_InputIsUnique_ReturnTrue(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueBitVector(str);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod()]
+        [DataRow("aa")]
+        [DataRow("abab")]
+        [DataRow("casa")]
+        [DataRow("eve")]
+        [DataRow("abdefghijkk")]
+        public void IsUniqueBitVector_InputIsNotUnique_ReturnFalse(string str)
+        {
+            var result = q1_1_IsUnique.IsUniqueHashSet(str);
 
             Assert.IsFalse(result);
         }
